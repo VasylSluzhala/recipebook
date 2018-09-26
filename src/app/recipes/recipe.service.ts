@@ -11,7 +11,7 @@ export class RecipeService{
 
     private recipes: Recipe[] = [
         new Recipe(
-            'Test Recipe', 
+            'Fish', 
             'This is the simple test', 
             'https://photo2.foodgawker.com/wp-content/uploads/2017/10/3096288.jpg',
             [
@@ -19,9 +19,9 @@ export class RecipeService{
                 new Ingredient("Bread", 2)
             ]),
         new Recipe(
-            'Test Recipe Another', 
+            'Salat', 
             'This is the simple test', 
-            'https://photo2.foodgawker.com/wp-content/uploads/2017/10/3096288.jpg',
+            'https://gotovim-doma.ru/images/recipe/4/62/46259738bf7d2b0f646e03b006740d54.jpg',
             [
                 new Ingredient("Sault", 1),
                 new Ingredient("Onion", 5)
@@ -31,6 +31,10 @@ export class RecipeService{
 
     constructor(private slService: ShoppingListService) {}
     
+    getRecipe(index: number){
+        return this.recipes[index];
+    }
+
     getRecipes(){
         return this.recipes.slice();
     }
