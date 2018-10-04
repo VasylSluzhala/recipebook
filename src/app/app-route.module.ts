@@ -4,16 +4,19 @@ import { RecipesComponent } from './recipes/recipes.component';
 import { ShoppingListComponent } from './shopping-list/shopping-list.component';
 import { NoRecipeSelectedComponent } from './recipes/no-recipe-selected/no-recipe-selected.component';
 import { RecipeDetailComponent } from './recipes/recipe-detail/recipe-detail.component';
+import { RecipeEditComponent } from './recipes/recipe-edit/recipe-edit.component';
 
 const appRouts: Route[] = [
     { path: '', redirectTo: '/recipe', pathMatch: 'full' },
-    { 
-        path: 'recipe', 
-        component: RecipesComponent, 
+    {
+        path: 'recipe',
+        component: RecipesComponent,
         children: [
-            {path: '', component:NoRecipeSelectedComponent, pathMatch:'full' },
-            {path: ':id', component: RecipeDetailComponent}
-        ] 
+            { path: '', component: NoRecipeSelectedComponent, pathMatch: 'full' },
+            { path: 'new', component: RecipeEditComponent },
+            { path: ':id', component: RecipeDetailComponent },
+            { path: ':id/edit', component: RecipeEditComponent }
+        ]
     },
     { path: 'shopping-list', component: ShoppingListComponent }
     //{ path: '**', redirectTo: 'recipe'}
@@ -22,7 +25,7 @@ const appRouts: Route[] = [
 @NgModule({
     imports: [
         RouterModule.forRoot(appRouts)
-]
+    ]
 })
 export class AppRouteModule {
 
