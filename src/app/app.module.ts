@@ -1,3 +1,4 @@
+import { DataStorageService } from './shared/data-storage.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -17,6 +18,7 @@ import { ShoppingListService } from './shopping-list/shopping-list.service';
 import { AppRouteModule } from './app-route.module';
 import { NoRecipeSelectedComponent } from './recipes/no-recipe-selected/no-recipe-selected.component';
 import { RecipeEditComponent } from './recipes/recipe-edit/recipe-edit.component';
+import { RecipeService } from './recipes/recipe.service';
 
 @NgModule({
   declarations: [
@@ -40,7 +42,7 @@ import { RecipeEditComponent } from './recipes/recipe-edit/recipe-edit.component
     RouterModule,
     AppRouteModule
   ],
-  providers: [ShoppingListService],
+  providers: [ShoppingListService, DataStorageService, RecipeService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
