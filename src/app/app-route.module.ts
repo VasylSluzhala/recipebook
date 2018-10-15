@@ -8,15 +8,15 @@ import { RecipeEditComponent } from './recipes/recipe-edit/recipe-edit.component
 
 const appRouts: Route[] = [
     { path: '', redirectTo: '/recipe', pathMatch: 'full' },
-    { 
-        path: 'recipe', 
-        component: RecipesComponent, 
+    {
+        path: 'recipe',
+        component: RecipesComponent,
         children: [
-            {path: '', component:NoRecipeSelectedComponent, pathMatch:'full' },
-            {path: 'new', component: RecipeEditComponent},
-            {path: ':id', component: RecipeDetailComponent},
-            {path: ':id/edit', component: RecipeEditComponent}
-        ] 
+            { path: '', component: NoRecipeSelectedComponent, pathMatch: 'full' },
+            { path: 'new', component: RecipeEditComponent },
+            { path: ':id', component: RecipeDetailComponent },
+            { path: ':id/edit', component: RecipeEditComponent }
+        ]
     },
     { path: 'shopping-list', component: ShoppingListComponent }
     //{ path: '**', redirectTo: 'recipe'}
@@ -25,7 +25,7 @@ const appRouts: Route[] = [
 @NgModule({
     imports: [
         RouterModule.forRoot(appRouts)
-]
+    ]
 })
 export class AppRouteModule {
 
