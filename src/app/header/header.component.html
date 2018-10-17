@@ -17,14 +17,15 @@
         
         <div class="form-inline my-2 my-lg-0">
             <ul class="navbar-nav mr-auto">
+                <li class="nav-item"><a class="nav-link" style="cursor:pointer;" routerLink="/signup">Register</a></li>
                 <li class="nav-item dropdown" appDropdown>
                     <a class="nav-link dropdown-toggle" style="cursor:pointer;" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
                         aria-expanded="false">
                         Manage
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" style="cursor:pointer;">Save Data</a>
-                        <a class="dropdown-item" style="cursor:pointer;">Fetch Data</a>
+                        <a class="dropdown-item" style="cursor:pointer;" (click)="onSaveData()">Save Data</a>
+                        <a class="dropdown-item" style="cursor:pointer;" (click)="onGetData()">Fetch Data</a>
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item" style="cursor:pointer;">Something else here</a>
                     </div>
