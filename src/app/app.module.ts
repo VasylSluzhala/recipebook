@@ -21,6 +21,7 @@ import { RecipeEditComponent } from './recipes/recipe-edit/recipe-edit.component
 import { RecipeService } from './recipes/recipe.service';
 import { SignupComponent } from './auth/signup/signup.component';
 import { SigninComponent } from './auth/signin/signin.component';
+import { AuthService } from './auth/auth.service';
 
 @NgModule({
   declarations: [
@@ -46,7 +47,7 @@ import { SigninComponent } from './auth/signin/signin.component';
     RouterModule,
     AppRouteModule
   ],
-  providers: [ShoppingListService, DataStorageService, RecipeService],
+  providers: [ShoppingListService, DataStorageService, RecipeService, AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
