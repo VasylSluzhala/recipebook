@@ -20,7 +20,6 @@ export class DataStorageService {
 
     getData(){
         const token = this.authService.getToken();
-
         return this.http.get('https://recipes-3f8ca.firebaseio.com/recipes.json?auth=' + token)
         .pipe(
             map((response: Response) =>{
