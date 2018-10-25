@@ -13,6 +13,7 @@ export class RecipeEditComponent implements OnInit {
   id: number;
   editMode: boolean;
   recipeForm: FormGroup;
+  controls: any;
 
   constructor(private route: ActivatedRoute,
               private router: Router,
@@ -26,6 +27,8 @@ export class RecipeEditComponent implements OnInit {
         this.initForm();
       }
       );
+
+      this.controls = (<FormGroup>this.recipeForm.get('ingredients')).controls;
   }
 
   onSubmit(){
