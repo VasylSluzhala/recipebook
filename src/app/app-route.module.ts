@@ -1,11 +1,12 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Route, PreloadAllModules } from '@angular/router';
 import { HomeComponent } from './core/home/home.component';
+import { ShoppingListComponent } from './shopping-list/shopping-list.component';
 
 const appRouts: Route[] = [
     { path: '', component: HomeComponent, pathMatch: 'full' },
     { path: 'recipe', loadChildren: './recipes/recipe.module#RecipeModule'},
-    { path: 'shopping-list', loadChildren: './shopping-list/shopping-list.module#ShoppingListModule' }
+    { path: 'shopping-list', component: ShoppingListComponent }
 ];
 
 @NgModule({
